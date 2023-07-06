@@ -18,7 +18,8 @@
 # include <stdio.h> //제거필요
 typedef struct s_list
 {
-	int				data;
+	int		index;
+	int		data;
 	struct s_list	*next;
 	//struct s_list	*prev;
 } t_list;
