@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seoson <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: seongho <seongho@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 11:14:52 by seoson            #+#    #+#             */
-/*   Updated: 2023/07/01 21:51:03 by seoson           ###   ########.fr       */
+/*   Updated: 2023/07/07 13:48:31 by seongho          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int		ft_isnum(char *argv);
 int		ft_atoi(char *argv);
 long long	ft_atoi2(char *nptr);
 char	**ft_split(char const *s, char c);
-size_t	ft_strlen(const char *s);
+size_t	ft_lst_len(const char *s);
 void	sa(t_list **head, int flag);
 void	sb(t_list **head, int flag);
 void	ss(t_list **stack_a, t_list **stack_b);
