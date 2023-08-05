@@ -6,7 +6,7 @@
 /*   By: seongho <seongho@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 11:14:52 by seoson            #+#    #+#             */
-/*   Updated: 2023/07/07 13:48:31 by seongho          ###   ########.fr       */
+/*   Updated: 2023/08/05 17:11:33 by seoson           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@
 # include <stdio.h> //제거필요
 typedef struct s_list
 {
-	int		index;
 	int		data;
+	int		stack_a_cnt;
+	int		stack_b_cnt;
 	struct s_list	*next;
-	//struct s_list	*prev;
 } t_list;
 
 t_list	*ft_lstnew(int data);
@@ -45,5 +45,7 @@ void	rra(t_list **head, int flag);
 void	rrb(t_list **head, int flag);
 void	rrr(t_list **stack_a, t_list **stack_b);
 void	sort(t_list **stack_a, t_list **stack_b);
-int	stack_size(t_list *stack_a);
+int		stack_size(t_list *stack_a);
+void	make_index(t_list **stack_a);
+void	sort_over_3(t_list **stack_a, t_list **stack_b);
 #endif

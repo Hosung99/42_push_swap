@@ -6,7 +6,7 @@
 /*   By: seoson <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 12:23:25 by seoson            #+#    #+#             */
-/*   Updated: 2023/06/21 15:23:54 by seoson           ###   ########.fr       */
+/*   Updated: 2023/08/05 18:32:26 by seoson           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	pa(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*last;
+	t_list	*temp;
 
 	if (!*stack_b)
 		return ;
@@ -26,5 +27,8 @@ void	pa(t_list **stack_a, t_list **stack_b)
 		(*stack_a)->next = NULL;
 		(*stack_a) = last;
 	}
+	temp = (*stack_b);
+	(*stack_b) = (*stack_b)->next;
+	free(temp);
 	write(1, "pa\n", 3);
 }

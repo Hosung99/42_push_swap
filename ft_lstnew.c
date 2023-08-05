@@ -6,7 +6,7 @@
 /*   By: seoson <seoson@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 17:05:34 by seoson            #+#    #+#             */
-/*   Updated: 2023/06/23 14:19:27 by seoson           ###   ########.fr       */
+/*   Updated: 2023/08/05 16:07:18 by seoson           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,5 @@ t_list	*ft_lstnew(int data)
 		return (0);
 	node->data = data;
 	node->next = NULL;
-	node->index = -1;
-	//node->prev = NULL;
 	return (node);
 }

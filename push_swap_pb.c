@@ -6,7 +6,7 @@
 /*   By: seoson <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 12:23:25 by seoson            #+#    #+#             */
-/*   Updated: 2023/06/23 14:43:52 by seoson           ###   ########.fr       */
+/*   Updated: 2023/08/05 17:56:22 by seoson           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	pb(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*last;
+	t_list	*temp;
 
 	if (!*stack_a)
 		return ;
@@ -26,5 +27,8 @@ void	pb(t_list **stack_a, t_list **stack_b)
 		(*stack_b)->next = NULL;
 		(*stack_b) = last;
 	}
+	temp = (*stack_a);
+	(*stack_a) = (*stack_a)->next;
+	free(temp);
 	write(1, "pb\n", 3);
 }

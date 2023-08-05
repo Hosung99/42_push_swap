@@ -6,7 +6,7 @@
 /*   By: seoson <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 15:53:45 by seoson            #+#    #+#             */
-/*   Updated: 2023/07/01 21:13:46 by seoson           ###   ########.fr       */
+/*   Updated: 2023/08/05 16:09:20 by seoson           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,6 @@ static void	sort3(t_list **head)
 	}
 }
 
-static void	sort_over3(t_list **head)
-{
-
-}
-
 void	sort(t_list **stack_a, t_list **stack_b)
 {
 	int	cnt;
@@ -63,5 +58,5 @@ void	sort(t_list **stack_a, t_list **stack_b)
 	else if (cnt == 3)
 		sort3(&(*stack_a));
 	else
-		sort_over3(&(*stack_a));
+		sort_over_3(&(*stack_a), &(*stack_b));
 }

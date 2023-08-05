@@ -6,7 +6,7 @@
 /*   By: seoson <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 11:17:20 by seoson            #+#    #+#             */
-/*   Updated: 2023/07/01 20:33:04 by seoson           ###   ########.fr       */
+/*   Updated: 2023/08/05 18:41:05 by seoson           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
 			temp++;
 		}
 	}
-	printf("before sort --------------------------\n");
+	printf("before indexing --------------------------\n");
 	t_list *temp_a;
 	temp_a = stack_a;
 	while (temp_a)
@@ -45,12 +45,13 @@ int main(int argc, char *argv[])
 		printf("%d\n",temp_a->data);
 		temp_a = temp_a->next;
 	}
-	printf("after sort --------------------------\n");
+	make_index(&stack_a);
+	printf("after indexing --------------------------\n");
 	sort(&stack_a, &stack_b);
 	temp_a = stack_a;
-	while (temp_a)
+/*	while (temp_a)
 	{
 		printf("%d\n",temp_a->data);
 		temp_a = temp_a->next;
-	}
+	}*/
 }

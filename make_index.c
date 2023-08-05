@@ -6,27 +6,30 @@
 /*   By: seongho <seongho@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 13:25:29 by seongho           #+#    #+#             */
-/*   Updated: 2023/07/07 13:46:23 by seongho          ###   ########.fr       */
+/*   Updated: 2023/08/05 16:08:14 by seoson           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	get_min_list(t_list **stack_a)
+void	make_index(t_list **stack_a)
 {
-	int	min;
-
-	min = -2147483648;
+	int		index;
+	t_list	*outer_loop;
+	t_list	*inner_loop;
 	
-}
-
-void	init(t_list **stack_a, t_list **stack_b)
-{
-	t_list	*temp;
-	
-	temp = (*stack_a);
-	while (temp->next)
+	outer_loop = (*stack_a);
+	while (outer_loop)
 	{
-		
+		index = 1;
+		inner_loop = (*stack_a);
+		while (inner_loop)
+		{
+			if (outer_loop->data > inner_loop->data)
+				index++;
+			inner_loop = inner_loop->next;
+		}
+		outer_loop->data = index;
+		outer_loop = outer_loop->next;
 	}
 }
