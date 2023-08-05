@@ -6,7 +6,7 @@
 /*   By: seoson <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 16:07:58 by seoson            #+#    #+#             */
-/*   Updated: 2023/08/05 18:47:11 by seoson           ###   ########.fr       */
+/*   Updated: 2023/08/05 19:07:40 by seoson           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,6 @@ static int	get_pivot_2(t_list *stack_a)
 	return (pivot_2 / 3 * 2);
 }
 
-/*static int	get_pivot_half(t_list *stack_b)
-{
-
-}*/
-
 void	sort_over_3(t_list **stack_a, t_list**stack_b)
 {
 	t_list	*temp;
@@ -83,4 +78,5 @@ void	sort_over_3(t_list **stack_a, t_list**stack_b)
 		printf("%d\n",temp_b->data);
 		temp_b = temp_b->next;
 	}
+	printf("b size: %d",stack_size(*stack_b) / 2);
 }
