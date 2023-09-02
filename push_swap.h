@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seongho <seongho@student.42.fr>            +#+  +:+       +#+        */
+/*   By: seoson <seoson@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 11:14:52 by seoson            #+#    #+#             */
-/*   Updated: 2023/08/05 17:11:33 by seoson           ###   ########.fr       */
+/*   Updated: 2023/09/02 13:27:12 by seoson           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ typedef struct s_list
 	int		data;
 	int		stack_a_cnt;
 	int		stack_b_cnt;
+	int		stack_total_cnt;
 	struct s_list	*next;
 } t_list;
 
@@ -48,4 +49,13 @@ void	sort(t_list **stack_a, t_list **stack_b);
 int		stack_size(t_list *stack_a);
 void	make_index(t_list **stack_a);
 void	sort_over_3(t_list **stack_a, t_list **stack_b);
+void	count_command_b(t_list **stack_b);
+void	count_command_a(t_list **stack_a, t_list **stack_b);
+int		check_bigger(t_list **stack_a, t_list *stack_b);
+int		set_bigger(t_list **stack_a, t_list *stack_b);
+void	set_smaller(t_list **stack_a, t_list **stack_b);
+void	greedy_sort(t_list **stack_a, t_list **stack_b);
+
+
+
 #endif

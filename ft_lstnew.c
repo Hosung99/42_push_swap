@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seoson <seoson@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: seoson <seoson@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 17:05:34 by seoson            #+#    #+#             */
-/*   Updated: 2023/08/05 16:07:18 by seoson           ###   ########.fr       */
+/*   Updated: 2023/09/02 13:27:24 by seoson           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@ t_list	*ft_lstnew(int data)
 	if (!node)
 		return (0);
 	node->data = data;
+	node->stack_a_cnt = 0;
+	node->stack_b_cnt = 0;
+	node->stack_total_cnt = 0;
 	node->next = NULL;
 	return (node);
 }

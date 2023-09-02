@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seoson <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: seoson <seoson@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 11:17:20 by seoson            #+#    #+#             */
-/*   Updated: 2023/08/05 18:41:05 by seoson           ###   ########.fr       */
+/*   Updated: 2023/09/01 14:08:52 by seoson           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int main(int argc, char *argv[])
 	make_index(&stack_a);
 	printf("after indexing --------------------------\n");
 	sort(&stack_a, &stack_b);
-	temp_a = stack_a;
+	//temp_a = stack_a;
 /*	while (temp_a)
 	{
 		printf("%d\n",temp_a->data);
