@@ -1,35 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_init.c                                   :+:      :+:    :+:   */
+/*   ft_check_dup.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seongho <seongho@student.42.fr>            +#+  +:+       +#+        */
+/*   By: seoson <seoson@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/07 13:25:29 by seongho           #+#    #+#             */
-/*   Updated: 2023/08/05 16:08:14 by seoson           ###   ########.fr       */
+/*   Created: 2023/09/12 12:57:59 by seoson            #+#    #+#             */
+/*   Updated: 2023/09/13 21:59:50 by seoson           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	make_index(t_list **stack_a)
+void	ft_check_dup(t_list **stack_a)
 {
-	int		index;
 	t_list	*outer_loop;
 	t_list	*inner_loop;
-	
+
 	outer_loop = (*stack_a);
-	while (outer_loop)
+	while (outer_loop->next)
 	{
-		index = 1;
-		inner_loop = (*stack_a);
+		inner_loop = outer_loop->next;
 		while (inner_loop)
 		{
-			if (outer_loop->data > inner_loop->data)
-				index++;
+			if (outer_loop->data == inner_loop->data)
+			{
+				write(2, "Error\n", 6);
+				ft_lstclear(&(*stack_a));
+				exit(1);
+			}
 			inner_loop = inner_loop->next;
 		}
-		outer_loop->data = index;
 		outer_loop = outer_loop->next;
 	}
 }

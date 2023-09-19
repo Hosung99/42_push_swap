@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seoson <seoson@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: seoson <seoson@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 17:58:16 by seoson            #+#    #+#             */
-/*   Updated: 2023/06/19 11:41:33 by seoson           ###   ########.fr       */
+/*   Updated: 2023/09/13 21:56:46 by seoson           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ static int	count_word(char const *s, char c)
 			flag = 0;
 			save++;
 		}
+		else if (!flag && s[i] == '-')
+			return (0);
 		if (s[i] == c)
 			flag = 1;
 		i++;
@@ -71,7 +73,8 @@ static char	**free_malloc(char **str, int i)
 	while (i)
 		free(str[--i]);
 	free(str);
-	return (0);
+	write(2, "Error\n", 6);
+	exit(1);
 }
 
 char	**ft_split(char const *s, char c)
@@ -87,7 +90,7 @@ char	**ft_split(char const *s, char c)
 		return (0);
 	str[word_cnt] = 0;
 	if (!word_cnt)
-		str[0] = "error";
+		str[0] = "Error";
 	while (word_cnt--)
 	{
 		while (*s && *s == c)

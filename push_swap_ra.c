@@ -6,7 +6,7 @@
 /*   By: seoson <seoson@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 15:45:59 by seoson            #+#    #+#             */
-/*   Updated: 2023/09/01 14:08:02 by seoson           ###   ########.fr       */
+/*   Updated: 2023/09/11 17:22:37 by seoson           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@ void	ra(t_list **head, int flag)
 	*head = temp->next;
 	temp->next = NULL;
 	if (flag)
-		write(1,"ra\n",3);
+		write(1, "ra\n", 3);
 }

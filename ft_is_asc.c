@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_size.c                                       :+:      :+:    :+:   */
+/*   ft_is_asc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seoson <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: seoson <seoson@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/01 20:19:11 by seoson            #+#    #+#             */
-/*   Updated: 2023/08/29 19:56:47 by seoson           ###   ########.fr       */
+/*   Created: 2023/09/14 18:28:32 by seoson            #+#    #+#             */
+/*   Updated: 2023/09/14 18:30:38 by seoson           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	stack_size(t_list *stack_a)
+int	ft_is_asc(t_list **stack_a)
 {
 	t_list	*temp;
-	int		cnt;
+	int		index;
 
-	cnt = 0;
-	temp = stack_a;
+	index = 1;
+	temp = (*stack_a);
 	while (temp)
 	{
-		cnt++;
+		if (temp->index != index)
+			return (0);
+		index++;
 		temp = temp->next;
 	}
-	return (cnt);
+	return (1);
 }

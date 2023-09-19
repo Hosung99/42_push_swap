@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seoson <seoson@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: seoson <seoson@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 11:29:20 by seoson            #+#    #+#             */
-/*   Updated: 2023/07/01 17:56:22 by seoson           ###   ########.fr       */
+/*   Updated: 2023/09/15 12:58:36 by seoson           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,14 @@ static int	jump_blank(const char *nptr, int *minus_check, int *double_check)
 	while (nptr[i])
 	{
 		if (nptr[i] == '-')
+		{
+			if (nptr[i + 1] == '0')
+			{
+				write(2, "Error\n", 6);
+				exit(1);
+			}
 			*minus_check = *minus_check + 1;
+		}
 		else if (nptr[i] == '+')
 			*double_check = *double_check + 1;
 		else
@@ -51,6 +58,7 @@ int	ft_atoi(char *nptr)
 			break ;
 		i++;
 	}
+	free(nptr);
 	if (double_check + minus_check > 1)
 		return (0);
 	else if (minus_check == 1)

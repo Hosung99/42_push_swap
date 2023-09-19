@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_stack_size.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seoson <seoson@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/08 14:40:07 by seoson            #+#    #+#             */
-/*   Updated: 2023/09/13 21:57:58 by seoson           ###   ########.fr       */
+/*   Created: 2023/07/01 20:19:11 by seoson            #+#    #+#             */
+/*   Updated: 2023/09/12 12:53:01 by seoson           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_lstadd_back(t_list **lst, int data)
+int	ft_stack_size(t_list *stack_a)
 {
-	t_list	*last;
 	t_list	*temp;
+	int		cnt;
 
-	if ((*lst) == NULL)
-		*lst = ft_lstnew(data);
-	else
+	cnt = 0;
+	temp = stack_a;
+	while (temp)
 	{
-		last = ft_lstlast(*lst);
-		temp = ft_lstnew(data);
-		last->next = temp;
+		cnt++;
+		temp = temp->next;
 	}
+	return (cnt);
 }

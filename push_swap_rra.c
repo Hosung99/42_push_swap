@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_rra.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seoson <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: seoson <seoson@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/23 14:07:56 by seoson            #+#    #+#             */
-/*   Updated: 2023/06/23 14:42:35 by seoson           ###   ########.fr       */
+/*   Updated: 2023/09/10 14:48:20 by seoson           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,5 @@ void	rra(t_list **head, int flag)
 	last_prev->next = NULL;
 	*head = last;
 	if (flag)
-		write(1,"rra\n",4);
+		write(1, "rra\n", 4);
 }

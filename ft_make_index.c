@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_make_index.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seoson <seoson@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/08 14:40:07 by seoson            #+#    #+#             */
-/*   Updated: 2023/09/13 21:57:58 by seoson           ###   ########.fr       */
+/*   Created: 2023/07/07 13:25:29 by seongho           #+#    #+#             */
+/*   Updated: 2023/09/12 13:55:10 by seoson           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_lstadd_back(t_list **lst, int data)
+void	ft_make_index(t_list **stack_a)
 {
-	t_list	*last;
-	t_list	*temp;
+	t_list	*outer_loop;
+	t_list	*inner_loop;
 
-	if ((*lst) == NULL)
-		*lst = ft_lstnew(data);
-	else
+	ft_check_dup(&(*stack_a));
+	outer_loop = (*stack_a);
+	while (outer_loop)
 	{
-		last = ft_lstlast(*lst);
-		temp = ft_lstnew(data);
-		last->next = temp;
+		inner_loop = (*stack_a);
+		while (inner_loop)
+		{
+			if (outer_loop->data > inner_loop->data)
+				outer_loop->index++;
+			inner_loop = inner_loop->next;
+		}
+		outer_loop = outer_loop->next;
 	}
 }

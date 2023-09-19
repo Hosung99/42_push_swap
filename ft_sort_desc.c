@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_sort_desc.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seoson <seoson@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/08 14:40:07 by seoson            #+#    #+#             */
-/*   Updated: 2023/09/13 21:57:58 by seoson           ###   ########.fr       */
+/*   Created: 2023/09/13 12:54:15 by seoson            #+#    #+#             */
+/*   Updated: 2023/09/13 13:55:14 by seoson           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_lstadd_back(t_list **lst, int data)
+void	ft_sort_desc(t_list **stack_a, t_list **stack_b)
 {
-	t_list	*last;
 	t_list	*temp;
+	int		size;
 
-	if ((*lst) == NULL)
-		*lst = ft_lstnew(data);
-	else
+	temp = (*stack_a);
+	size = ft_stack_size(*stack_a) - 3;
+	while (size-- > 0)
 	{
-		last = ft_lstlast(*lst);
-		temp = ft_lstnew(data);
-		last->next = temp;
+		rra(&(*stack_a), 1);
+		pb(&(*stack_a), &(*stack_b));
 	}
+	sort(&(*stack_a), &(*stack_b));
+	size = ft_stack_size(*stack_b);
+	while (size-- > 0)
+		pa(&(*stack_a), &(*stack_b));
 }

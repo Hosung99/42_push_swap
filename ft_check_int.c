@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_check_int.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seongho <seongho@student.42.fr>            +#+  +:+       +#+        */
+/*   By: seoson <seoson@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/14 13:44:28 by seoson            #+#    #+#             */
-/*   Updated: 2023/07/07 13:48:10 by seongho          ###   ########.fr       */
+/*   Created: 2023/09/12 13:13:22 by seoson            #+#    #+#             */
+/*   Updated: 2023/09/12 13:13:38 by seoson           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-size_t	ft_list_len(const char *s)
+int	ft_check_int(long long argv)
 {
-	size_t	cnt;
-
-	cnt = 0;
-	while (*s)
-	{
-		cnt++;
-		s++;
-	}
-	return (cnt);
+	if (argv > 2147483647)
+		return (1);
+	else if (argv < -2147483648)
+		return (1);
+	else
+		return (0);
 }

@@ -1,28 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   push_swap_parsing.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seoson <seoson@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/08 14:40:07 by seoson            #+#    #+#             */
-/*   Updated: 2023/09/13 21:57:58 by seoson           ###   ########.fr       */
+/*   Created: 2023/09/13 13:55:57 by seoson            #+#    #+#             */
+/*   Updated: 2023/09/13 21:59:31 by seoson           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_lstadd_back(t_list **lst, int data)
+void	push_swap_parsing(int argc, char *argv[], t_list **stack_a)
 {
-	t_list	*last;
-	t_list	*temp;
+	int		index;
+	char	**temp;
+	char	**temp_temp;
 
-	if ((*lst) == NULL)
-		*lst = ft_lstnew(data);
-	else
+	index = 1;
+	while (--argc)
 	{
-		last = ft_lstlast(*lst);
-		temp = ft_lstnew(data);
-		last->next = temp;
+		temp = ft_split(argv[index++], 32);
+		temp_temp = temp;
+		while (*temp)
+		{
+			if (ft_isnum(*temp))
+				ft_lstadd_back(&(*stack_a), ft_atoi(*temp));
+			else
+			{
+				write(2, "Error\n", 6);
+				ft_lstclear(&(*stack_a));
+				exit(1);
+			}
+			temp++;
+		}
+		if (temp_temp)
+			free(temp_temp);
 	}
 }

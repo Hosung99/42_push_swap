@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swp_sa.c                                      :+:      :+:    :+:   */
+/*   push_swap_sb.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seoson <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: seoson <seoson@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 11:58:29 by seoson            #+#    #+#             */
-/*   Updated: 2023/06/23 14:40:54 by seoson           ###   ########.fr       */
+/*   Updated: 2023/09/10 14:49:05 by seoson           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	sb(t_list **head, int flag)
 {
-	t_list *temp;
+	t_list	*temp;
 
 	if (!*head || !(*head)->next)
 		return ;
@@ -22,7 +22,6 @@ void	sb(t_list **head, int flag)
 	(*head)->next = temp->next;
 	temp->next = *head;
 	*head = temp;
-	//(*head)->prev->next = temp;
 	if (flag)
-		write(1,"sb\n",3);
+		write(1, "sb\n", 3);
 }
